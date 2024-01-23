@@ -1,7 +1,86 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 body {
     background-color: rgb(206, 224, 179);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+#txtDiv {
+    font-size: 2rem;
+    text-align: center;
+    position: fixed;
+    top: 40%;
+}
+form {
+    position: fixed;
+    bottom: 10%;
+}
+#rawImages {
+    display: flex;
+    flex-direction: column;
+}
+img {
+    width: 100vw;
+    height: 100vh;
+}
+#userInput {
+    font-size: 1.25rem;
+    height: 2rem;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 0.5rem;
+}
+#thumbnails {
+    display: flex;
+    position: fixed;
+    margin-top: 1rem;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+}
+
+#thumbnails img {
+    height: 3rem;
+    width: 5rem;
+}
+#altTxt {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    bottom: 0.75rem;
+    color: white;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.689)
+}
+.sideBtn {
+    display: none;
+    border: 3px solid gray;
+    padding: 1rem;
+    border-radius: 3rem;
+    background-color: white;
+
+}
+.arrows {
+    width: 1rem;
+    height: 1rem;
+}
+#next {
+    position: fixed;
+    top: 50%;
+    right: 2rem;
+}
+#next:active {
+    background-color: rgb(93, 93, 93);
+}
+#previous {
+    position: fixed;
+    top: 50%;
+    left: 2rem;
+}
+#previous:active {
+    background-color: rgb(93, 93, 93);
 }
