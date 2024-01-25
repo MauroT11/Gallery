@@ -5,7 +5,7 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 body {
-    background-color: rgb(206, 224, 179);
+    background-color: rgb(210, 202, 202);
     display: flex;
     justify-content: center;
     height: 100vh;
@@ -24,30 +24,52 @@ form {
     display: flex;
     flex-direction: column;
 }
-img {
-    width: 100vw;
+#rawImages img {
+    width: auto;
+    height: 100vh;
+    animation: mymove 3s;
+    animation-fill-mode: forwards;
+}
+  
+@keyframes mymove {
+    from {top: 0px;}
+    to {left: 200px; top: 100px;}
+}
+
+#nextImg {
+    position: fixed;
+    left: 100%;
+}
+
+#nextImg img {
+    width: 90vw;
     height: 100vh;
 }
+
 #userInput {
     font-size: 1.25rem;
     height: 2rem;
     text-align: center;
     border: 2px solid black;
     border-radius: 0.5rem;
+    width: 10rem;
 }
 #thumbnails {
-    display: flex;
+    display: none;
     position: fixed;
     margin-top: 1rem;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: rgb(0, 0, 0) 0rem 0rem 2rem 10px;
+    border: 0.2rem solid black;
+    /* border-radius: 1rem; */
 }
 
 #thumbnails img {
     height: 3rem;
     width: 5rem;
 }
-#altTxt {
-    display: flex;
+
+#altTxtDiv {
+    display: none;
     position: fixed;
     align-items: center;
     bottom: 0.75rem;
@@ -56,17 +78,19 @@ img {
     padding: 0.5rem 1rem;
     background-color: rgba(0, 0, 0, 0.689)
 }
+
 .sideBtn {
     display: none;
     border: 3px solid gray;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 3rem;
     background-color: white;
-
+    box-shadow: rgb(0, 0, 0) 0rem 0rem 3rem 10px;
 }
 .arrows {
     width: 1rem;
     height: 1rem;
+    
 }
 #next {
     position: fixed;
