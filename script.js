@@ -19,27 +19,39 @@ form.addEventListener('submit', function(e) {
     search(imgQuery)
 })
 
-next.addEventListener('click', function() {
-    console.log('NEXT')
-    if (images.length > 0) {
+document.addEventListener('keydown', function(e) {
+    if (e.key == 'ArrowRight' & imgIndex < 9) {
         imgIndex++
         nextImgIndex++
         loadImgs(images[imgIndex])
         loadNextImg(images[nextImgIndex])
-    } else if (images.length < 10) {
-        console.log('NOTHING NEXT')
+    } else if (e.key == 'ArrowLeft' & imgIndex > 0) {
+        imgIndex--
+        loadImgs(images[imgIndex])
+    }
+})
+
+// CLICKING BUTTONS ON SCREEN TO CHANGE MAIN PHOTO
+
+next.addEventListener('click', function() {
+    console.log('NEXT')
+    if (imgIndex < 9) {
+        imgIndex++
+        nextImgIndex++
+        loadImgs(images[imgIndex])
+        // loadNextImg(images[nextImgIndex])
     }
 })
 
 previous.addEventListener('click', function() {
     console.log('Previous')
-    if (images.length > 1) {
+    if (imgIndex > 0) {
         imgIndex--
         loadImgs(images[imgIndex])
-    } else if (images.length == 0) {
-        console.log('NOTING')
     }
 })
+
+// FETCH PHOTOS FROM UNSPLASH, DISPLAY AND HIDE COMPONENTS, AND SEND PHOTO DATA TO OTHER FUNCTIONS
 
 async function search(searchParam) {
     console.log(searchParam)
@@ -51,8 +63,8 @@ async function search(searchParam) {
     loadImgs(images[imgIndex])
 
     // DISPLAYS BUTTONS AND HIDES HEADER TEXT AFTER SEARCHING PHOTOS
-    next.style.display = 'block'
-    previous.style.display = 'block'
+    next.style.display = 'flex'
+    previous.style.display = 'flex'
     txtDiv.style.display = 'none'
     TTS.style.display = 'flex'
     thumbnails.style.display = 'flex'

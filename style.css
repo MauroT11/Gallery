@@ -27,13 +27,6 @@ form {
 #rawImages img {
     width: auto;
     height: 100vh;
-    animation: mymove 3s;
-    animation-fill-mode: forwards;
-}
-  
-@keyframes mymove {
-    from {top: 0px;}
-    to {left: 200px; top: 100px;}
 }
 
 #nextImg {
@@ -58,7 +51,7 @@ form {
     display: none;
     position: fixed;
     margin-top: 1rem;
-    box-shadow: rgb(0, 0, 0) 0rem 0rem 2rem 10px;
+    box-shadow: rgb(28, 28, 28) 0rem 0rem 2rem 10px;
     border: 0.2rem solid black;
     /* border-radius: 1rem; */
 }
@@ -81,11 +74,11 @@ form {
 
 .sideBtn {
     display: none;
+    justify-items: center;
     border: 3px solid gray;
     padding: 0.5rem;
-    border-radius: 3rem;
+    border-radius: 1rem;
     background-color: white;
-    box-shadow: rgb(0, 0, 0) 0rem 0rem 3rem 10px;
 }
 .arrows {
     width: 1rem;
