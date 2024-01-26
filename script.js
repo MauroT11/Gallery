@@ -12,6 +12,7 @@ const nextImg = document.getElementById('nextImg')
 let images = []
 let imgIndex = 0
 let nextImgIndex = 1
+let opacity = 0
 
 form.addEventListener('submit', function(e) {
     e.preventDefault()
@@ -19,12 +20,13 @@ form.addEventListener('submit', function(e) {
     search(imgQuery)
 })
 
+// USE LEFT & RIGHT ON KEYBOARD CHANGES PHOTOS
 document.addEventListener('keydown', function(e) {
     if (e.key == 'ArrowRight' & imgIndex < 9) {
         imgIndex++
         nextImgIndex++
         loadImgs(images[imgIndex])
-        loadNextImg(images[nextImgIndex])
+        // loadNextImg(images[nextImgIndex])
     } else if (e.key == 'ArrowLeft' & imgIndex > 0) {
         imgIndex--
         loadImgs(images[imgIndex])
@@ -32,7 +34,6 @@ document.addEventListener('keydown', function(e) {
 })
 
 // CLICKING BUTTONS ON SCREEN TO CHANGE MAIN PHOTO
-
 next.addEventListener('click', function() {
     console.log('NEXT')
     if (imgIndex < 9) {
@@ -109,20 +110,33 @@ function loadImgs(arrayImgs) {
     })
 }
 
+// LOADS NEXT IMG OFF SCREEN !!! NOT WORKING !!!
 function loadNextImg(arrNextImg) {
 
     let nextImgTag = document.createElement('img')
-    // LOADS NEXT IMG OFF SCREEN
     nextImgTag.src = arrNextImg.urls.raw
     console.log(nextImgTag)
 
     nextImg.appendChild(nextImgTag)
 }
 
+//LOADS RAW FILE OF PHOTO TO DISPLAY ON SCREEN
 function display(source) {
     rawImages.innerHTML = ''
-
     rawImages.appendChild(source)
+
+    let displayedImg = document.querySelector('#rawImages > img')
+    //FADES PHOTOS IN AFTER SEARCH
+    function fade() {
+        
+        if (opacity<1) {
+           opacity += .1;
+           setTimeout(function(){fade()},50);
+        }
+        displayedImg.style.opacity = opacity;
+     }
+    fade()
+    
 }
 
 // DISPLAYS ALT TEXT TO HTML
