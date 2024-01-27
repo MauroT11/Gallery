@@ -69,6 +69,7 @@ async function search(searchParam) {
     txtDiv.style.display = 'none'
     TTS.style.display = 'flex'
     thumbnails.style.display = 'flex'
+    body.className = ''
     body.style.backgroundColor = 'black'
 }
 
@@ -126,16 +127,17 @@ function display(source) {
     rawImages.appendChild(source)
 
     let displayedImg = document.querySelector('#rawImages > img')
+
     //FADES PHOTOS IN AFTER SEARCH
     function fade() {
         
         if (opacity<1) {
            opacity += .1;
-           setTimeout(function(){fade()},50);
+           setTimeout(function(){fade()},100);
         }
         displayedImg.style.opacity = opacity;
      }
-    fade()
+    // fade()
     
 }
 

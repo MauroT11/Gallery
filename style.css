@@ -5,10 +5,54 @@
     font-family:monospace;
 }
 body {
-    background-color: rgb(210, 202, 202);
+    /* background-color: rgb(210, 202, 202); */
     display: flex;
     justify-content: center;
     height: 100vh;
+}
+
+.rainbow-bg{
+    animation: rainbow-bg 10s linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rainbow-bg{
+    100%,0%{
+        background-color: rgb(255,0,0);
+    }
+    8%{
+        background-color: rgb(255,127,0);
+    }
+    16%{
+        background-color: rgb(255,255,0);
+    }
+    25%{
+        background-color: rgb(127,255,0);
+    }
+    33%{
+        background-color: rgb(0,255,0);
+    }
+    41%{
+        background-color: rgb(0,255,127);
+    }
+    50%{
+        background-color: rgb(0,255,255);
+    }
+    58%{
+        background-color: rgb(0,127,255);
+    }
+    66%{
+        background-color: rgb(0,0,255);
+    }
+    75%{
+        background-color: rgb(127,0,255);
+    }
+    83%{
+        background-color: rgb(255,0,255);
+    }
+    91%{
+        background-color: rgb(255,0,127);
+    }
 }
 #txtDiv {
     font-size: 4rem;
@@ -29,7 +73,7 @@ form {
 #rawImages img {
     width: auto;
     height: 100vh;
-    max-width: 90vw;
+    max-width: 90rem;
 }
 .fadeIn {
     animation: fadeIn 1.0s ease forwards;
@@ -121,3 +165,11 @@ form {
 #previous:active {
     background-color: rgb(93, 93, 93);
 }
+
+/* @media (max-width: 1290px) {
+    #rawImages img {
+        width: auto;
+        height: ;
+    }
+    
+} */
