@@ -166,10 +166,59 @@ form {
     background-color: rgb(93, 93, 93);
 }
 
-/* @media (max-width: 1290px) {
+@media (max-width: 1230px) {
+    #rawImages {
+        justify-content: center;
+    }
     #rawImages img {
-        width: auto;
-        height: ;
+        width: 90vw;
+        height: auto;
+        margin: 0 5rem;
     }
     
-} */
+    #altTxtDiv {
+        bottom: 2rem;
+    }
+
+    #next {
+        position: absolute;
+    }
+    #previous {
+        position: absolute;
+    }
+    #userInput{
+        font-size: 2rem;
+        height: 2.5rem;
+        width: 15rem;
+    }
+    form {
+        bottom: 8%;
+    }
+}
+
+@media (max-width: 1024px) {
+    #thumbnails img {
+        height: auto;
+        width: 8vw;
+        margin: 0;
+    }
+    #thumbnails {
+        flex-wrap: wrap;
+        /* max-width:50%; */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 750px) {
+    #thumbnails img {
+        height: auto;
+        width: 10vw;
+        margin: 0;
+    }
+
+    #thumbnails {
+        flex-wrap: wrap;
+        max-width:50%;
+        justify-content: center;
+    }
+}
