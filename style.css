@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family:monospace;
 }
+
 body {
     /* background-color: rgb(210, 202, 202); */
     display: flex;
@@ -11,6 +12,7 @@ body {
     height: 100vh;
 }
 
+/* MAKES BACKGROUND CYCLE THROUGH RAINBOW COLOURS */
 .rainbow-bg{
     animation: rainbow-bg 10s linear;
     animation-iteration-count: infinite;
@@ -54,6 +56,7 @@ body {
         background-color: rgb(255,0,127);
     }
 }
+
 #txtDiv {
     font-size: 4rem;
     text-align: center;
@@ -61,30 +64,23 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: white;
 }
+
 form {
     position: fixed;
     bottom: 10%;
 }
+
 #rawImages {
     display: flex;
     flex-direction: column;
 }
+
 #rawImages img {
     width: auto;
     height: 100vh;
     max-width: 90rem;
-}
-.fadeIn {
-    animation: fadeIn 1.0s ease forwards;
-}
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
 }
     
 #nextImg {
@@ -105,6 +101,7 @@ form {
     border-radius: 0.5rem;
     width: 10rem;
 }
+
 #thumbnails {
     display: none;
     position: fixed;
@@ -113,6 +110,7 @@ form {
     border: 0.2rem solid black;
     /* border-radius: 1rem; */
 }
+
 #thumbnails:hover {
     cursor: pointer;
 }
@@ -141,35 +139,52 @@ form {
     border-radius: 1rem;
     background-color: white;
 }
+
 .sideBtn:hover{
     cursor: pointer;
 }
+
 .arrows {
     width: 1rem;
     height: 1rem;
     
 }
+
 #next {
     position: fixed;
     top: 50%;
     right: 2rem;
 }
+
 #next:active {
     background-color: rgb(93, 93, 93);
 }
+
 #previous {
     position: fixed;
     top: 50%;
     left: 2rem;
 }
+
 #previous:active {
     background-color: rgb(93, 93, 93);
 }
 
+footer{
+    position: absolute;
+    bottom: 2%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
 @media (max-width: 1230px) {
+
     #rawImages {
         justify-content: center;
     }
+
     #rawImages img {
         width: 90vw;
         height: auto;
@@ -183,14 +198,17 @@ form {
     #next {
         position: absolute;
     }
+
     #previous {
         position: absolute;
     }
+
     #userInput{
         font-size: 2rem;
         height: 2.5rem;
         width: 15rem;
     }
+
     form {
         bottom: 8%;
     }
@@ -202,6 +220,7 @@ form {
         width: 8vw;
         margin: 0;
     }
+
     #thumbnails {
         flex-wrap: wrap;
         /* max-width:50%; */

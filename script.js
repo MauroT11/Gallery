@@ -7,6 +7,7 @@ const next = document.getElementById('next')
 const previous = document.getElementById('previous')
 const txtDiv = document.getElementById('txtDiv')
 const nextImg = document.getElementById('nextImg')
+const footer = document.querySelector('footer')
 
 
 let images = []
@@ -69,6 +70,7 @@ async function search(searchParam) {
     txtDiv.style.display = 'none'
     TTS.style.display = 'flex'
     thumbnails.style.display = 'flex'
+    footer.style.display = 'none'
     body.className = ''
     body.style.backgroundColor = 'black'
 }
